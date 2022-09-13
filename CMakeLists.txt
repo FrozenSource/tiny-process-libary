@@ -12,7 +12,7 @@ add_library(tiny-process-library process.cpp)
 add_library(tiny-process-library::tiny-process-library ALIAS tiny-process-library)
 
 if(MSVC)
-  target_compile_definitions(tiny-process-library PRIVATE /D_CRT_SECURE_NO_WARNINGS)
+  target_compile_definitions(tiny-process-library PRIVATE -D_CRT_SECURE_NO_WARNINGS)
 else()
   target_compile_options(tiny-process-library PRIVATE -std=c++11 -Wall -Wextra)
 endif()
